@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array/>
+	<key>keyEquivalent</key>
+	<string>^~D</string>
+	<key>name</key>
+	<string>HTML (Erlydtl)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Since html is valid in Erlydtl templates include the html patterns</string>
+			<key>include</key>
+			<string>text.html.basic</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>{% comment %}</string>
+			<key>end</key>
+			<string>{% endcomment %}</string>
+			<key>name</key>
+			<string>comment.block.erlydtl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>{#</string>
+			<key>end</key>
+			<string>#}</string>
+			<key>name</key>
+			<string>comment.line.erlydtl</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>({%|{{)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.embedded.erlydtl</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(%}|}})</string>
+			<key>name</key>
+			<string>source.erlydtl.embedded.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(autoescape|endautoescape|block|endblock|trans|blocktrans|endblocktrans|plural|debug|extends|filter|firstof|for|endfor|if|include|else|endif|ifchanged|endifchanged|ifequal|endifequal|ifnotequal|endifnotequal|load|now|regroup|ssi|spaceless|templatetag|widthratio)\b</string>
+					<key>name</key>
+					<string>keyword.control.erlydtl.template</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(and|or|not|in|by|as)\b</string>
+					<key>name</key>
+					<string>keyword.operator.erlydtl.template</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\|(add|addslashes|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|filesizeformat|first|fix_ampersands|floatformat|get_digit|join|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|slice|slugify|stringformat|striptags|time|timesince|title|truncatewords|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno)\b</string>
+					<key>name</key>
+					<string>support.function.filter</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>('|")</string>
+					<key>end</key>
+					<string>\1</string>
+					<key>name</key>
+					<string>string.other.erlydtl.template.tag</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[a-zA-Z_]+</string>
+					<key>name</key>
+					<string>string variable</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.html.erlydtl</string>
+	<key>uuid</key>
+	<string>F4B0A70C-ECF6-4660-BC26-785216E3CF02</string>
+</dict>
+</plist>
